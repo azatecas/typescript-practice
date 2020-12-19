@@ -13,7 +13,7 @@ const TodoReducer = (state: State, action: Actions) => {
   switch (action.type) {
     case "ADD":
       return [...state, { text: action.text, complete: false }];
-    case "Remove":
+    case "REMOVE":
       return state.filter((_, i) => action.idx !== i);
     default:
       return state;
