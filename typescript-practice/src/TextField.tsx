@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { setCommentRange } from "typescript";
 
 interface Person {
@@ -21,12 +21,12 @@ interface TextNode {
 export const TextField: React.FC<Props> = ({ text }) => {
   const [count, setcount] = useState<TextNode>({ text: "hello" });
 
-  setcount(0);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   return (
     <div>
       <h1>{text}</h1>
-      <input />
+      <input ref={inputRef} />
     </div>
   );
 };
